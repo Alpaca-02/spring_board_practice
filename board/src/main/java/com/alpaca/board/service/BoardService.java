@@ -23,7 +23,14 @@ public class BoardService {
         return boardRepository.findAll();
     }
 
+
+    // 특정 게시글 불러오기
     public Board boardView(Integer id){
         return boardRepository.findById(id).get();
+    }
+
+    // 특정 게시글 삭제
+    public void boardDelete(Integer id){
+        boardRepository.deleteById(id);  // 받아온 id값의 글을 삭제한다
     }
 }
